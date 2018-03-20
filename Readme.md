@@ -40,6 +40,44 @@
         2) surge    
         
 --------------------------------------
+     
+ # HTTP Call Approaches:
+ 
+ 1) Only Node application :
+    - http
+    - request
+ 2) Only Browser Application :
+    - XMLHttpRequest
+    - jQuery
+    - Fetch
+    - framework provided api's like angular's $http
+    
+ 3) Node & Browser:
+    - isomorphic fetch
+    - xhr
+    - SuperAgent
+    - Axioz       
         
-        
+ --------------------------------------
+ 
+ #Mocking APIs:
+ 
+  1) If you are writing unit test then NOCK is handy way
+  2) Static JSON
+  3) Create development webserver
+    - api-mock
+    - JSON server
+    - JSON Schema faker: generates random data
+    - BrowserSync
+    - Express    
+ 
+ #Step for Mocking HTTP:
+  1) Declare our schema:
+        - JSON Schema Faker
+  2) Generate Random Data:
+        - faker.js
+        - chance.js
+        - randexp.js
+  3) Serve Data via API:
+        - JSON Server            
                 
