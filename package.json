@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "security-check": "nsp check",
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch",
     "open:src": "babel-node buildScripts/srcServer.js",
-    "localtunnel": "lt --port 3000"
+    "localtunnel": "lt --port 3000",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "dependencies": {
     "whatwg-fetch": "1.0.0"
