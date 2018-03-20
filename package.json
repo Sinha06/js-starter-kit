@@ -6,12 +6,13 @@
   "scripts": {
     "security-check": "nsp check",
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node buildScripts/srcServer.js",
     "localtunnel": "lt --port 3000",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.spec.js\""
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.spec.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "whatwg-fetch": "1.0.0"
